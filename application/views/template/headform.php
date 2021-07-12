@@ -89,13 +89,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item"> 
-                <a href="<?= base_url('Tamp/map2') ?>" class="nav-link active">
+                <a href="<?= base_url('Tamp/map2') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Map</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?= base_url('Tamp/form') ?>" class="nav-link">
+                <a href="<?= base_url('Tamp/form') ?>" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Form</p>
                 </a>

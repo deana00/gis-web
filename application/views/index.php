@@ -8,7 +8,9 @@
 
     <!-- Main content -->
     <section class="content">
-      <div id="mapid" style="width: 600px; height: 400px;"></div>
+      <div class="container-fluid">
+        <div id="mapid" style="width: 600px; height: 400px;"></div>        
+      </div>
     </section>
     <!-- /.content -->
   </div>
