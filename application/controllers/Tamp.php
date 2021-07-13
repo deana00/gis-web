@@ -13,23 +13,10 @@ class Tamp extends CI_Controller {
 
 	public function index()
 	{
+		$data['data'] = $this->Lok_Model-> getloc();
 		$this->load->view('template/head');
-		$this->load->view('index');
+		$this->load->view('template/mapSPBU',$data);
 		$this->load->view('template/foot');
-	}
-	public function map2()
-	{
-		$data['data'] = $this->Lok_Model-> getloc();
-		$this->load->view('template/head');
-		$this->load->view('index');
-		$this->load->view('template/foot2',$data);
-	}
-	public function map3()
-	{
-		$data['data'] = $this->Lok_Model-> getloc();
-		$this->load->view('template/head');
-		$this->load->view('index');
-		$this->load->view('template/foot2',$data);
 	}
 	public function form()
 	{
@@ -37,7 +24,7 @@ class Tamp extends CI_Controller {
 		$this->form_validation->set_rules('coord', 'coord', 'required');
 
 		if($this->form_validation->run()==false){
-			$this->load->view('template/headform');
+			$this->load->view('template/head');
 			$this->load->view('form');
 			$this->load->view('template/foot');
 		}else{

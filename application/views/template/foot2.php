@@ -4,7 +4,7 @@
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.0
     </div>
-  </footer>
+</footer>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -64,22 +64,8 @@
 
 	<?php foreach($data as $a):?>
 		var marker = L.marker([<?= $a['coord'];?>]).addTo(mymap);
-		marker.bindPopup("<?= $a['nama'];?>").openPopup();
-
+		marker.bindPopup("<?= $a['nama'];?>");
 	<?php endforeach;?>
-
-	L.circle([51.508, -0.11], {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5,
-		radius: 500
-	}).addTo(mymap);
-
-	L.polygon([
-		[51.509, -0.08],
-		[51.503, -0.06],
-		[51.51, -0.047]
-	]).addTo(mymap);
 
 </script>
 </body>
