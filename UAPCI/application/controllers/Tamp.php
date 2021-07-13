@@ -13,22 +13,10 @@ class Tamp extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('template/head');
-		$this->load->view('index');
-		$this->load->view('template/foot');
-	}
-	public function map2()
-	{
 		$data['data'] = $this->Lok_Model-> getloc();
 		$this->load->view('template/head');
-		$this->load->view('index');
-		$this->load->view('template/foot2',$data);
-	}
-	public function test()
-	{
-		$this->load->view('template/head');
-		$this->load->view('template/test');
-		$this->load->view('template/foot2');
+		$this->load->view('template/mapSPBU',$data);
+		$this->load->view('template/foot');
 	}
 	public function form()
 	{

@@ -2,10 +2,10 @@
     <section class="content">
         <div class="container-fluid">
             <div class="container">
-                <div class="row mt-3">
-                    <div class="row-md-6">
+                <div class="row">
+                    <div class="row">
 
-                        <div class="card">
+                        <div class="card mt-3">
                             <div class="card-header">
                                 <form method = "post">
                                     <div class="form-group">
