@@ -8,6 +8,12 @@
     <title>Data Lokasi SPBU</title>
 </head>
 
+<style>
+    .bi {
+        align-items: center;
+    }
+</style>
+
 <body>
     <div class="content-wrapper">
         <section class="content">
@@ -29,8 +35,12 @@
                                 <td><?= $row['nama']; ?></td>
                                 <td><?= $row['coord']; ?></td>
                                 <td>
-                                    <a href="update.php">Update</a>
-                                    <a href="delete.php">Delete</a>
+                                    <a href="<?= base_url(); ?>/Tamp/update">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </a>
+                                    <a href="<?= base_url(); ?>/Tamp/delete">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
                                 </td>
                             <?php endforeach; ?>
                         </tr>

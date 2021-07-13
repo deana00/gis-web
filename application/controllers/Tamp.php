@@ -54,4 +54,12 @@ class Tamp extends CI_Controller
 		$this->load->view('spbu', $data);
 		$this->load->view('template/foot');
 	}
+
+	public function update()
+	{
+		$data['data'] = $this->Lok_Model->getdataById();
+		$this->load->view('template/head-spbu');
+		$this->load->view('update-form', $data);
+		$this->load->view('template/foot');
+	}
 }
