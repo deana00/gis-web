@@ -13,11 +13,6 @@ class Lok_Model extends CI_Model
 
             "nama" => $this->input->post('nama', true),
             "coord" => $this->input->post('coord', true),
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d243b04 (add spbu view)
         ];
 
         $this->db->insert('data', $data);
@@ -53,8 +48,4 @@ class Lok_Model extends CI_Model
         $this->db->like('nama', $keyword);
         return $this->db->get('data')->result_array();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d243b04 (add spbu view)
