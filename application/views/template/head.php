@@ -56,7 +56,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       <img src = "<?= base_url('assets/adm/')?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">SI Bandar Lampung</span>
     </a>
@@ -68,21 +68,62 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
+
+          <!-- Dropdown marker  -->
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Marker SPBU
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item"> 
-                <a href="<?= base_url('Tamp/index') ?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Peta</p>
-                </a>
-              </li>
               <li class="nav-item">
-                <a href="<?= base_url('Tamp/form') ?>" class="nav-link">
+                <a href="<?= base_url('Tamp/formMarker') ?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Form</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?= base_url('Tamp/tabelFormMarker') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tabel Form</p>
+                </a>
+              </li>
             </ul>
+          </li>
+
+          <!-- Dropdown polyline -->
+          <li class="nav-item menu-close">
+            <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Polyline Jalan
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?= base_url('Tamp/formPolyline') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Form</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?= base_url('Tamp/tabelFormPolyline') ?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tabel Form</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item"> 
+            <a href="<?= base_url('Tamp/index') ?>" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Peta</p>
+            </a>
           </li>
           
         </ul>

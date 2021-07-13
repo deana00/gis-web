@@ -15,10 +15,10 @@ class Tamp extends CI_Controller {
 	{
 		$data['data'] = $this->Lok_Model-> getloc();
 		$this->load->view('template/head');
-		$this->load->view('template/mapSPBU',$data);
+		$this->load->view('mapSPBU',$data);
 		$this->load->view('template/foot');
 	}
-	public function form()
+	public function formMarker()
 	{
 		$this->form_validation->set_rules('nama', 'nama', 'required');
 		$this->form_validation->set_rules('coord', 'coord', 'required');
@@ -31,5 +31,26 @@ class Tamp extends CI_Controller {
 			$this->Lok_Model->tambahDatadata();
 			redirect('Tamp/form');
 		}
+	}
+	public function tabelFormMarker()
+	{
+		// Halaman edit tabel marker
+		$this->load->view('template/head');
+		$this->load->view('index');
+		$this->load->view('template/foot');
+	}
+	public function formPolyline()
+	{
+		// Halaman edit tabel marker
+		$this->load->view('template/head');
+		$this->load->view('index');
+		$this->load->view('template/foot');
+	}
+	public function tabelFormPolyline()
+	{
+		// Halaman edit tabel marker
+		$this->load->view('template/head');
+		$this->load->view('index');
+		$this->load->view('template/foot');
 	}
 }
