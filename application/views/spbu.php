@@ -28,8 +28,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <?php foreach ($data as $row) : ?>
+                        <?php foreach ($data as $row) : ?>
+                            <tr>
                                 <?php $nomor = 1; ?>
                                 <th scope="row"><?= $nomor++; ?></th>
                                 <td><?= $row['nama']; ?></td>
@@ -42,8 +42,8 @@
                                         <i class="bi bi-trash"></i>
                                     </a>
                                 </td>
-                            <?php endforeach; ?>
-                        </tr>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

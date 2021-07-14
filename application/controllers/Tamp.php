@@ -58,7 +58,7 @@ class Tamp extends CI_Controller
 	public function update()
 	{
 		$data['data'] = $this->Lok_Model->getdataById();
-		$this->load->view('template/head-spbu');
+		$this->load->view('template/head-update');
 		$this->load->view('update-form', $data);
 		$this->load->view('template/foot');
 	}
