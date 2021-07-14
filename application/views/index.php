@@ -1,13 +1,10 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
-
-  <!-- /.content-header -->
-
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      <div id="mapid" style="width: 600px; height: 400px;"></div>
+      <h1>Halaman Kosong</h1>
+      <p>untuk test</p>
     </div>
   </section>
   <!-- /.content -->
