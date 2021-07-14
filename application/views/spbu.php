@@ -28,9 +28,9 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <?php $nomor = 1; ?>
+                        <?php foreach ($data as $row) : ?>
                         <tr>
-                            <?php foreach ($data as $row) : ?>
-                                <?php $nomor = 1; ?>
                                 <th scope="row"><?= $nomor++; ?></th>
                                 <td><?= $row['nama']; ?></td>
                                 <td><?= $row['coord']; ?></td>
@@ -49,6 +49,3 @@
             </div>
         </section>
     </div>
-</body>
-
-</html>

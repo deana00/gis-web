@@ -2,16 +2,9 @@
     <section class="content">
         <div class="container-fluid">
             <div class="container">
-<<<<<<< HEAD
-                <div class="row">
-                    <div class="row">
-
-                        <div class="card mt-3">
-=======
                 <div class="row mt-3">
                     <div class="row-md-6">
                         <div class="card">
->>>>>>> d243b04 (add spbu view)
                             <div class="card-header">
                                 <form method = "post">
                                     <div class="form-group">
@@ -26,17 +19,9 @@
                                 </form>
                             </div>
                         </div>
-<<<<<<< HEAD
-                        
-=======
->>>>>>> d243b04 (add spbu view)
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<<<<<<< HEAD
-</div>
-=======
   </div>
->>>>>>> d243b04 (add spbu view)
