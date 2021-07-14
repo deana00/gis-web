@@ -19,6 +19,7 @@ class Tamp extends CI_Controller
 		$this->load->view('mapSPBU', $data);
 		$this->load->view('template/foot');
 	}
+
 	public function form()
 	{
 		$this->form_validation->set_rules('nama', 'nama', 'required');
@@ -30,7 +31,7 @@ class Tamp extends CI_Controller
 			$this->load->view('template/foot');
 		} else {
 			$this->Lok_Model->tambahDatadata();
-			redirect('Tamp/form');
+			redirect(base_url('Tamp/data_spbu'));
 		}
 	}
 
@@ -42,11 +43,30 @@ class Tamp extends CI_Controller
 		$this->load->view('template/foot');
 	}
 
-	public function update()
+	public function edit($id)
 	{
-		$data['data'] = $this->Lok_Model->getdataById();
-		$this->load->view('template/head-update');
+		$data['data'] = $this->Lok_Model->getdataById($id);
+		$this->load->view('template/headform');
 		$this->load->view('update-form', $data);
 		$this->load->view('template/foot');
+	}
+
+	public function update($id)
+	{
+		$this->form_validation->set_rules('nama', 'name', 'required');
+		$this->form_validation->set_rules('coord', 'koordinat', 'required');
+
+		if ($this->form_validation->run() == false) {
+			$this->edit($id);
+		} else {
+			$this->Lok_Model->updateData($id);
+			redirect(base_url('Tamp/data_spbu'));
+		}
+	}
+
+	public function delete($id)
+	{
+		$this->Lok_Model->hapusDatadata($id);
+		redirect(base_url('Tamp/data_spbu'));
 	}
 }

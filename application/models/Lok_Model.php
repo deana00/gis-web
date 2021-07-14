@@ -10,7 +10,6 @@ class Lok_Model extends CI_Model
     public function tambahDatadata()
     {
         $data = [
-
             "nama" => $this->input->post('nama', true),
             "coord" => $this->input->post('coord', true),
         ];
@@ -29,17 +28,13 @@ class Lok_Model extends CI_Model
         return $this->db->get_where('data', ['id_lok' => $id])->row_array();
     }
 
-
-    public function ubahdata()
+    public function updateData($id)
     {
         $data = [
-            "id_lok" => $this->input->post('id_lok', true),
             "nama" => $this->input->post('nama', true),
             "coord" => $this->input->post('coord', true),
-
         ];
-        $this->db->where('id_lok', $this->input->post('id_lok'));
-        $this->db->update('data', $data);
+        return $this->db->update('data', $data, ['id_lok' => $id]);
     }
 
     public function cariDatadata()
