@@ -27,6 +27,8 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?= base_url('assets/adm/') ?>plugins/summernote/summernote-bs4.min.css">
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
@@ -68,8 +70,8 @@
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item menu-close">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-geo-alt"></i>
                 <p>
                   Marker
                   <i class="right fas fa-angle-left"></i>
@@ -78,24 +80,47 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="<?= base_url('Tamp/form') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
+                    <i class="far bi bi-chevron-right"></i>
                     <p>Form</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= base_url('Tamp/data_spbu') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Data SPBU</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('Tamp/index') ?>" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Map</p>
+                    <i class="far bi bi-chevron-right"></i>
+                    <p>Data Marker</p>
                   </a>
                 </li>
               </ul>
             </li>
+            <li class="nav-item menu-close">
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-signpost-split"></i>
+                <p>
+                  Line
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?= base_url('Tamp/formLine') ?>" class="nav-link">
+                    <i class="far bi bi-chevron-right"></i>
+                    <p>Form</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= base_url('Tamp/dataLine') ?>" class="nav-link">
+                    <i class="far bi bi-chevron-right"></i>
+                    <p>Data Jalan</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+                  <a href="<?= base_url('Tamp/index') ?>" class="nav-link bg-light">
+                    <i class="far bi bi-map"></i>
+                    <p>Map</p>
+                  </a>
+                </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

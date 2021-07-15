@@ -69,7 +69,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item menu-open">
+            <li class="nav-item menu-close">
               <a href="#" class="nav-link">
                 <i class="nav-icon bi bi-geo-alt"></i>
                 <p>
@@ -85,14 +85,14 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('Tamp/data_spbu') ?>" class="nav-link active">
+                  <a href="<?= base_url('Tamp/data_spbu') ?>" class="nav-link">
                     <i class="far bi bi-chevron-right"></i>
                     <p>Data Marker</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item menu-close">
+            <li class="nav-item menu-open">
               <a href="#" class="nav-link">
                 <i class="nav-icon bi bi-signpost-split"></i>
                 <p>
@@ -108,7 +108,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('Tamp/dataLine') ?>" class="nav-link">
+                  <a href="<?= base_url('Tamp/dataLine') ?>" class="nav-link active">
                     <i class="far bi bi-chevron-right"></i>
                     <p>Data Jalan</p>
                   </a>

@@ -79,13 +79,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('Tamp/form') ?>" class="nav-link">
+                  <a href="<?= base_url('Tamp/form') ?>" class="nav-link active">
                     <i class="far bi bi-chevron-right"></i>
                     <p>Form</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('Tamp/data_spbu') ?>" class="nav-link active">
+                  <a href="<?= base_url('Tamp/data_spbu') ?>" class="nav-link">
                     <i class="far bi bi-chevron-right"></i>
                     <p>Data Marker</p>
                   </a>
