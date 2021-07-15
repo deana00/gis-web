@@ -116,11 +116,11 @@
               </ul>
             </li>
             <li class="nav-item">
-                  <a href="<?= base_url('Tamp/index') ?>" class="nav-link">
-                    <i class="far bi bi-map"></i>
-                    <p>Map</p>
-                  </a>
-                </li>
+              <a href="<?= base_url('Tamp/index') ?>" class="nav-link">
+                <i class="far bi bi-map"></i>
+                <p>Map</p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

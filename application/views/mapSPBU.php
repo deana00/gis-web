@@ -241,6 +241,7 @@
             var geojsonLineKecamatan;
 
             //deklarasi Layer di Map
+            var Lines = L.layerGroup();
             var Markers = L.layerGroup();
             var GasStations = L.layerGroup();
             var Kecamatan = L.layerGroup();
@@ -253,6 +254,25 @@
             <?php foreach ($data as $a) : ?>
                 var DatabaseMarker = L.marker([<?= $a['coord']; ?>]).addTo(Markers);
                 DatabaseMarker.bindPopup("<?= $a['nama']; ?>");
+            <?php endforeach; ?>
+
+            // var latlng = [
+            //     [-5.482822338440459, 105.25010325120212],
+            //     [-5.482172321041679, 105.24987878476225],
+            //     [-5.481550361947881, 105.24969640577986],
+            //     [-5.4803882804831545, 105.24936438250423],
+            //     [-5.479226199018428, 105.24910718137521],
+            //     [-5.477970589870423, 105.24881256917288],
+            //     [-5.476034566826573, 105.24831453425944]
+            // ];
+
+            // var DatabaseLine = L.polyline(latlng, {
+            //     color: 'blue'
+            // }).addTo(Lines);
+
+            <?php foreach ($line as $l) : ?>
+                var DatabaseLine = L.polyline([<?= $l['coordinate']; ?>]).addTo(Lines);
+                DatabaseLine.bindPopup("<?= $l['nama_line']; ?>");
             <?php endforeach; ?>
 
             //csv dan marker ke layer
@@ -298,26 +318,26 @@
             }).addTo(Kecamatan);
 
             //membuat polygon Line Nasional
-            geojsonLineNasional = L.geoJson(LineNasional, {
-                style: styleJalanNasional,
-                onEachFeature: function(feature, layer) {
-                    layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
-                }
-            }).addTo(JalanNasional);
-            //membuat polygon Line Provinsi
-            geojsonLineProvinsi = L.geoJson(LineProvinsi, {
-                style: styleJalanProvinsi,
-                onEachFeature: function(feature, layer) {
-                    layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
-                }
-            }).addTo(JalanProvinsi);
-            //membuat polygon Line Kabupaten
-            geojsonLineKecamatan = L.geoJson(LineKabupaten, {
-                style: styleJalanKabupaten,
-                onEachFeature: function(feature, layer) {
-                    layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
-                }
-            }).addTo(JalanKabupaten);
+            // geojsonLineNasional = L.geoJson(LineNasional, {
+            //     style: styleJalanNasional,
+            //     onEachFeature: function(feature, layer) {
+            //         layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
+            //     }
+            // }).addTo(JalanNasional);
+            // //membuat polygon Line Provinsi
+            // geojsonLineProvinsi = L.geoJson(LineProvinsi, {
+            //     style: styleJalanProvinsi,
+            //     onEachFeature: function(feature, layer) {
+            //         layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
+            //     }
+            // }).addTo(JalanProvinsi);
+            // //membuat polygon Line Kabupaten
+            // geojsonLineKecamatan = L.geoJson(LineKabupaten, {
+            //     style: styleJalanKabupaten,
+            //     onEachFeature: function(feature, layer) {
+            //         layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
+            //     }
+            // }).addTo(JalanKabupaten);
 
 
 
@@ -358,6 +378,11 @@
             ];
 
             var overlays = [{
+                    name: "Lines",
+                    // icon: iconByName('bar'),
+                    layer: Lines
+                },
+                {
                     name: "Markers",
                     // icon: iconByName('bar'),
                     layer: Markers
@@ -438,5 +463,17 @@
             };
 
             legend.addTo(map);
+
+            //15 jul
+            var popup = L.popup();
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("You clicked the map at " + e.latlng.toString())
+                    .openOn(map);
+            }
+
+            map.on('click', onMapClick);
         </script>
     </div>

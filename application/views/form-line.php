@@ -8,14 +8,14 @@
                             <div class="card-header">
                                 <form method="post">
                                     <div class="form-group">
-                                        <label>Nama Marker</label>
-                                        <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Marker">
-                                        <?= form_error('nama', '<small class="text-danger pl-1">', '</small>'); ?>
+                                        <label>Nama Line</label>
+                                        <input type="text" class="form-control" name="nama_line" id="nama" placeholder="Nama Line">
+                                        <?= form_error('nama_line', '<small class="text-danger pl-1">', '</small>'); ?>
                                     </div>
                                     <div class="form-group">
                                         <label>Koordinat</label>
-                                        <input type="text" class="form-control" name="coord" id="coord" placeholder="Koordinat">
-                                        <?= form_error('coord', '<small class="text-danger pl-1">', '</small>'); ?>
+                                        <textarea class="form-control" name="coordinate" id="coordinate" placeholder="Koordinat"></textarea>
+                                        <?= form_error('coordinate', '<small class="text-danger pl-1">', '</small>'); ?>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

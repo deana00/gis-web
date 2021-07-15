@@ -9,25 +9,23 @@
                                 <thead align="center">
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Nama Marker</th>
-                                        <th scope="col">Koordinat</th>
+                                        <th scope="col">Nama Line</th>
                                         <th scope="col" colspan="2">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $nomor = 1; ?>
-                                    <?php foreach ($data as $row) : ?>
+                                    <?php foreach ($line as $row) : ?>
                                         <tr align="center">
                                             <th><?= $nomor++; ?></th>
-                                            <td><?= $row['nama']; ?></td>
-                                            <td><?= $row['coord']; ?></td>
+                                            <td><?= $row['nama_line']; ?></td>
                                             <td>
-                                                <a href=" <?= base_url('Tamp/edit/' . $row['id_lok']); ?>" class="btn btn-primary btn-sm">
+                                                <a href=" <?= base_url('Tamp/edit_line/' . $row['id_line']); ?>" class="btn btn-primary btn-sm">
                                                     <i class="bi bi-pencil-square"> Edit</i>
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url('Tamp/delete/' . $row['id_lok']); ?>" onclick=" return confirm('Are you sure want to delete? Data will be permanently lost.');" class="btn btn-danger btn-sm">
+                                                <a href="<?= base_url('Tamp/delete_line/' . $row['id_line']); ?>" onclick=" return confirm('Are you sure want to delete? Data will be permanently lost.');" class="btn btn-danger btn-sm">
                                                     <i class="bi bi-trash"> Hapus</i>
                                                 </a>
                                             </td>

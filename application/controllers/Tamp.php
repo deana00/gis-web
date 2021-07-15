@@ -16,8 +16,10 @@ class Tamp extends CI_Controller
 	public function index()
 	{
 		$data['data'] = $this->Lok_Model->getloc();
+		$line['line'] = $this->Lok_Model->getline();
 		$this->load->view('template/head');
 		$this->load->view('mapSPBU', $data);
+		$this->load->view('mapSPBU', $line);
 		$this->load->view('template/foot');
 	}
 
@@ -79,14 +81,51 @@ class Tamp extends CI_Controller
 	//Line
 	public function formLine()
 	{
-		$this->load->view('template/head-formline');
-		$this->load->view('index');
-		$this->load->view('template/foot');
+		$this->form_validation->set_rules('nama_line', 'nama line', 'required');
+		$this->form_validation->set_rules('coordinate', 'koordinat', 'required');
+
+		if ($this->form_validation->run() == false) {
+			$this->load->view('template/head-formline');
+			$this->load->view('form-line');
+			$this->load->view('template/foot');
+		} else {
+			$this->Lok_Model->tambahLine();
+			redirect(base_url('Tamp/dataLine'));
+		}
 	}
+
 	public function dataLine()
 	{
+		$line['line'] = $this->Lok_Model->getline();
 		$this->load->view('template/head-dataline');
-		$this->load->view('index');
+		$this->load->view('lines', $line);
 		$this->load->view('template/foot');
+	}
+
+	public function edit_line($id)
+	{
+		$line['line'] = $this->Lok_Model->getLineById($id);
+		$this->load->view('template/head-form');
+		$this->load->view('update-form-line', $line);
+		$this->load->view('template/foot');
+	}
+
+	public function update_line($id)
+	{
+		$this->form_validation->set_rules('nama_line', 'nama line', 'required');
+		$this->form_validation->set_rules('coordinate', 'koordinat', 'required');
+
+		if ($this->form_validation->run() == false) {
+			$this->edit_line($id);
+		} else {
+			$this->Lok_Model->updateLine($id);
+			redirect(base_url('Tamp/dataLine'));
+		}
+	}
+
+	public function delete_line($id)
+	{
+		$this->Lok_Model->hapusLine($id);
+		redirect(base_url('Tamp/dataLine'));
 	}
 }
