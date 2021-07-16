@@ -22,11 +22,9 @@
                                             <td><?= $row['nama']; ?></td>
                                             <td><?= $row['coord']; ?></td>
                                             <td>
-                                                <a href=" <?= base_url('Tamp/edit/' . $row['id_lok']); ?>" class="btn btn-primary btn-sm">
+                                                <a href=" <?= base_url('Tamp/edit/' . $row['id_lok']); ?>" class="btn btn-primary btn-sm mr-2">
                                                     <i class="bi bi-pencil-square"> Edit</i>
                                                 </a>
-                                            </td>
-                                            <td>
                                                 <a href="<?= base_url('Tamp/delete/' . $row['id_lok']); ?>" onclick=" return confirm('Are you sure want to delete? Data will be permanently lost.');" class="btn btn-danger btn-sm">
                                                     <i class="bi bi-trash"> Hapus</i>
                                                 </a>

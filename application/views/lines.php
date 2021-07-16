@@ -20,11 +20,9 @@
                                             <th><?= $nomor++; ?></th>
                                             <td><?= $row['nama_line']; ?></td>
                                             <td>
-                                                <a href=" <?= base_url('Tamp/edit_line/' . $row['id_line']); ?>" class="btn btn-primary btn-sm">
+                                                <a href=" <?= base_url('Tamp/edit_line/' . $row['id_line']); ?>" class="btn btn-primary btn-sm mr-2">
                                                     <i class="bi bi-pencil-square"> Edit</i>
                                                 </a>
-                                            </td>
-                                            <td>
                                                 <a href="<?= base_url('Tamp/delete_line/' . $row['id_line']); ?>" onclick=" return confirm('Are you sure want to delete? Data will be permanently lost.');" class="btn btn-danger btn-sm">
                                                     <i class="bi bi-trash"> Hapus</i>
                                                 </a>

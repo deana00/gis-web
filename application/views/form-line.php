@@ -14,7 +14,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Koordinat</label>
-                                        <textarea class="form-control" name="coordinate" id="coordinate" placeholder="Koordinat"></textarea>
+                                        <textarea class="form-control" name="coordinate" id="coordinate" placeholder="[latitude,longitude],[latitude,longitude]"></textarea>
                                         <?= form_error('coordinate', '<small class="text-danger pl-1">', '</small>'); ?>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -256,20 +256,7 @@
                 DatabaseMarker.bindPopup("<?= $a['nama']; ?>");
             <?php endforeach; ?>
 
-            // var latlng = [
-            //     [-5.482822338440459, 105.25010325120212],
-            //     [-5.482172321041679, 105.24987878476225],
-            //     [-5.481550361947881, 105.24969640577986],
-            //     [-5.4803882804831545, 105.24936438250423],
-            //     [-5.479226199018428, 105.24910718137521],
-            //     [-5.477970589870423, 105.24881256917288],
-            //     [-5.476034566826573, 105.24831453425944]
-            // ];
-
-            // var DatabaseLine = L.polyline(latlng, {
-            //     color: 'blue'
-            // }).addTo(Lines);
-
+            //Line dari database ke layer
             <?php foreach ($line as $l) : ?>
                 var DatabaseLine = L.polyline([<?= $l['coordinate']; ?>]).addTo(Lines);
                 DatabaseLine.bindPopup("<?= $l['nama_line']; ?>");
@@ -317,27 +304,27 @@
                 onEachFeature: onEachFeature
             }).addTo(Kecamatan);
 
-            //membuat polygon Line Nasional
-            // geojsonLineNasional = L.geoJson(LineNasional, {
-            //     style: styleJalanNasional,
-            //     onEachFeature: function(feature, layer) {
-            //         layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
-            //     }
-            // }).addTo(JalanNasional);
-            // //membuat polygon Line Provinsi
-            // geojsonLineProvinsi = L.geoJson(LineProvinsi, {
-            //     style: styleJalanProvinsi,
-            //     onEachFeature: function(feature, layer) {
-            //         layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
-            //     }
-            // }).addTo(JalanProvinsi);
-            // //membuat polygon Line Kabupaten
-            // geojsonLineKecamatan = L.geoJson(LineKabupaten, {
-            //     style: styleJalanKabupaten,
-            //     onEachFeature: function(feature, layer) {
-            //         layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
-            //     }
-            // }).addTo(JalanKabupaten);
+            // membuat polygon Line Nasional
+            geojsonLineNasional = L.geoJson(LineNasional, {
+                style: styleJalanNasional,
+                onEachFeature: function(feature, layer) {
+                    layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
+                }
+            }).addTo(JalanNasional);
+            //membuat polygon Line Provinsi
+            geojsonLineProvinsi = L.geoJson(LineProvinsi, {
+                style: styleJalanProvinsi,
+                onEachFeature: function(feature, layer) {
+                    layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
+                }
+            }).addTo(JalanProvinsi);
+            //membuat polygon Line Kabupaten
+            geojsonLineKecamatan = L.geoJson(LineKabupaten, {
+                style: styleJalanKabupaten,
+                onEachFeature: function(feature, layer) {
+                    layer.bindPopup('<h5>' + 'Jalan' + ' ' + feature.properties.NAMA + '</h5>');
+                }
+            }).addTo(JalanKabupaten);
 
 
 
@@ -364,7 +351,7 @@
                 center: [-5.403131, 105.266419],
                 zoom: 12,
                 tap: false,
-                layers: [colorful, GasStations, Markers, Kabupaten]
+                layers: [grayscale, GasStations, Markers, Kabupaten]
             });
 
             var baseLayers = [{
@@ -441,12 +428,13 @@
             map.addControl(panelLayers);
 
             L.control.scale({
+                position: "bottomright",
                 maxWidth: 150
             }).addTo(map);
 
             //legend
             var legend = L.control({
-                position: "bottomright"
+                position: "bottomleft"
             });
 
             legend.onAdd = function(map) {
